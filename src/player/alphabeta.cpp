@@ -42,17 +42,17 @@ void write_valid_spot(std::ofstream& fout) {
   // Keep updating the output until getting killed.
   while(true) {
     // Choose a random spot.
-    int depth = 5;
-    while(true)
-    {
-      auto move = Alphabeta::get_move(root, depth, root->player);
-      fout << move.first.first << " " << move.first.second << " "\
-          << move.second.first << " " << move.second.second << std::endl;
-      depth++;
-    }
-    // auto move = Alphabeta::get_move(root, 8, root->player);
+    // int depth = 5;
+    // while(true)
+    // {
+    //   auto move = Alphabeta::get_move(root, depth, root->player);
     //   fout << move.first.first << " " << move.first.second << " "\
     //       << move.second.first << " " << move.second.second << std::endl;
+    //   depth++;
+    // }
+    auto move = Alphabeta::get_move(root, 5, root->player);
+      fout << move.first.first << " " << move.first.second << " "\
+          << move.second.first << " " << move.second.second << std::endl;
     // Remember to flush the output to ensure the last action is written to file.
     fout.flush();
     break;

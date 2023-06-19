@@ -21,29 +21,10 @@ int State::evaluate(int player_)
     {
       // total += the_value[this->board.board[player_][i][j]];
       // total -= the_value[this->board.board[1-player_][i][j]];
-      total += the_value[this->board.board[player_][i][j]] * board.board_value[this->board.board[player_][i][j]][player_][i][j];
-      total -= the_value[this->board.board[1-player_][i][j]] * board.board_value[this->board.board[1-player_][i][j]][player_][i][j];
-      // if(this->player == 0)
-      // {
-      //   total += the_value[this->board.board[0][i][j]] * board.board_value[this->board.board[0][i][j]][i][j];
-        
-      //   if(this->board.board[1][i][j] == 1 || this->board.board[1][i][j] == 2)
-      //     total -= the_value[this->board.board[1][i][j]] * board.board_value[this->board.board[1][i][j]+6][i][j];
-      //   else
-      //     total -= the_value[this->board.board[1][i][j]] * board.board_value[this->board.board[1][i][j]][i][j];
-      // }
-      // else
-      // {
-      //   if(this->board.board[0][i][j] == 1 || this->board.board[0][i][j] == 2)
-      //     total -= the_value[this->board.board[0][i][j]] * board.board_value[this->board.board[0][i][j]][i][j];
-      //   else
-      //     total -= the_value[this->board.board[0][i][j]] * board.board_value[this->board.board[0][i][j]][i][j];
-        
-      //   if(this->board.board[1][i][j] == 1 || this->board.board[1][i][j] == 2)
-      //     total += the_value[this->board.board[1][i][j]] * board.board_value[this->board.board[1][i][j]+6][i][j];
-      //   else
-      //     total += the_value[this->board.board[1][i][j]] * board.board_value[this->board.board[1][i][j]][i][j];
-      // }
+      // total += the_value[this->board.board[player_][i][j]] * board.board_value[this->board.board[player_][i][j]][player_][i][j];
+      // total -= the_value[this->board.board[1-player_][i][j]] * board.board_value[this->board.board[1-player_][i][j]][player_][i][j];
+      total += the_value[this->board.board[player_][i][j]] + board.board_value_double[this->board.board[player_][i][j]][player_][i][j];
+      total -= the_value[this->board.board[1-player_][i][j]] + board.board_value_double[this->board.board[1-player_][i][j]][player_][i][j];
     }
   return total;
   //total += the_value[this->board.board[this->player][i][j]] * board.value[this->board.board[this->player][i][j]][i][j];

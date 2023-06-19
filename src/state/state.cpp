@@ -19,14 +19,13 @@ int State::evaluate(int player_)
   for(int i = 0; i < BOARD_H; i++)
     for(int j = 0; j < BOARD_W; j++)
     {
-      total += the_value[this->board.board[player_][i][j]];
-      total -= the_value[this->board.board[1-player_][i][j]];
+      // total += the_value[this->board.board[player_][i][j]];
+      // total -= the_value[this->board.board[1-player_][i][j]];
+      total += the_value[this->board.board[player_][i][j]] * board.board_value[this->board.board[player_][i][j]][player_][i][j];
+      total -= the_value[this->board.board[1-player_][i][j]] * board.board_value[this->board.board[1-player_][i][j]][player_][i][j];
       // if(this->player == 0)
-      // {1
-      //   if(this->board.board[0][i][j] == 1 || this->board.board[0][i][j] == 2)
-      //     total += the_value[this->board.board[0][i][j]] * board.board_value[this->board.board[0][i][j]][i][j];
-      //   else
-      //     total += the_value[this->board.board[0][i][j]] * board.board_value[this->board.board[0][i][j]][i][j];
+      // {
+      //   total += the_value[this->board.board[0][i][j]] * board.board_value[this->board.board[0][i][j]][i][j];
         
       //   if(this->board.board[1][i][j] == 1 || this->board.board[1][i][j] == 2)
       //     total -= the_value[this->board.board[1][i][j]] * board.board_value[this->board.board[1][i][j]+6][i][j];
@@ -295,7 +294,7 @@ void State::get_legal_actions()
       }
     }
   }
-  std::cout << "\n";
+  //std::cout << "\n";
   this->legal_actions = all_actions;
 }
 

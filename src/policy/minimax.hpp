@@ -9,5 +9,5 @@
 class Minimax{
 public:
   static Move get_move(State *state, int depth, int player);
-  static int minimax_caculate(State *state, int depth, bool maxiPlaye, int player);
+  static int minimax_caculate(State *state, int depth, bool maxiPlayer, int player);
 };

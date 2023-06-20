@@ -21,8 +21,6 @@ int State::evaluate(int player_)
     {
       // total += the_value[this->board.board[player_][i][j]];
       // total -= the_value[this->board.board[1-player_][i][j]];
-      // total += the_value[this->board.board[player_][i][j]] * board.board_value[this->board.board[player_][i][j]][player_][i][j];
-      // total -= the_value[this->board.board[1-player_][i][j]] * board.board_value[this->board.board[1-player_][i][j]][player_][i][j];
       total += the_value[this->board.board[player_][i][j]] + board.board_value_double[this->board.board[player_][i][j]][player_][i][j];
       total -= the_value[this->board.board[1-player_][i][j]] + board.board_value_double[this->board.board[1-player_][i][j]][player_][i][j];
     }
